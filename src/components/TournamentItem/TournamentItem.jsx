@@ -1,18 +1,21 @@
 import './TournamentItem.less';
 
-const TournamentItem = () => {
+const TournamentItem = ({ title, gameName, time, date, rank, prize }) => {
   return (
     <section className="tournament-wrapper">
       <div className="tournament-info">
         <div className="info-block">
           <div className="info-block__header">
-            <h4 className="info-block__header-title">NL 2-7 Triple Draw</h4>
+            <img src="/public/pin.svg" />
+            <h4 className="info-block__header-title">{title}</h4>
           </div>
 
-          <h3 className="ofc">OFC Pineapple</h3>
+          <h3 className="ofc">{gameName}</h3>
 
           <div className="date">
-            <span className="date-info">12:00 pm, 28 July</span>
+            <span className="date-info">
+              {time} pm, {date}
+            </span>
           </div>
         </div>
 
@@ -22,10 +25,10 @@ const TournamentItem = () => {
           </div>
           <div className="btn-block__rank">
             <div className="rank-player">
-              <img src="/public/players.svg" /> 1000/1000
+              <img src="/public/players.svg" /> {rank}/1000
             </div>
             <span className="rank-prize">
-              <img src="/public/tourney.svg" /> 1000000
+              <img src="/public/tourney.svg" /> {prize}
             </span>
           </div>
         </div>

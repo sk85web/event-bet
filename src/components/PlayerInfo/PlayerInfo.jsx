@@ -1,28 +1,28 @@
 import './PlayerInfo.less';
 
-const PlayerInfo = () => {
+const PlayerInfo = ({ balance, avatar, stars, userName }) => {
   return (
     <section className="player-info">
       <div className="player-info__name">
-        <h4 className="player-name">LongUserName</h4>
+        <h4 className="player-name">{userName}</h4>
         <div className="player-rate">
-          {Array.from({ length: 5 }).map((_, index) => (
+          {Array.from({ length: stars }).map((_, index) => (
             <img
               key={index}
               className="rate-icon"
-              src="public/star.svg"
+              src="/public/star.svg"
               alt="icon"
             />
           ))}
         </div>
       </div>
       <div className="player-info__avatar">
-        <img src="public/avatar.jpg" alt="avatar" />
+        <img src={avatar} alt="avatar" />
       </div>
 
       {/* Balance button */}
 
-      <button className="balance-btn">$100,500.00</button>
+      <button className="balance-btn">${balance}</button>
     </section>
   );
 };
