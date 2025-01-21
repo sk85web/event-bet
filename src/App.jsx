@@ -7,12 +7,17 @@ import TournamentItem from './components/TournamentItem/TournamentItem';
 
 function App() {
   return (
-    <main className="wrapper">
-      <Spinner />
-      <Loader />
-      <PlayerInfo />
-      <TournamentItem />
-    </main>
+    <div className="wrapper">
+      <header>
+        <h1 className="header">Poker</h1>
+      </header>
+      <main>
+        <Spinner />
+        <PlayerInfo />
+        <Loader progress={70} />
+        <TournamentItem />
+      </main>
+    </div>
   );
 }
 

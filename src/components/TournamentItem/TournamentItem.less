@@ -1,1 +1,150 @@
 @import '/src/styles/abstracts/_mixins.less';
+
+.tournament-wrapper {
+  background-color: #373352;
+  max-width: 304px;
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+
+  &::before {
+    content: 'Registering';
+    width: 16px;
+    height: 100%;
+
+    background-color: #00bb40;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px 0 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+  }
+
+  .tournament-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    padding: 8px;
+    gap: 21px;
+  }
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__header {
+    width: 113px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      background-image: url('/public/pin.svg');
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-title {
+      padding: 3px;
+      border: 1px solid #fff;
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 9.75px;
+      text-align: center;
+      color: #fff;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+  }
+
+  .ofc {
+    font-weight: 600;
+    font-size: 12px;
+    text-align-last: left;
+    color: #fff;
+  }
+
+  .date {
+    text-align: left;
+    font-weight: 500;
+    font-size: 10px;
+    color: #fff;
+    opacity: 0.7;
+    position: relative;
+
+    &::before {
+      margin-right: 15px;
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      background-image: url('/public/clock.svg');
+    }
+
+    &-info {
+      margin-left: 15px;
+    }
+  }
+}
+
+.btn-block {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 14px;
+
+  button {
+    border: none;
+    cursor: pointer;
+    width: 80px;
+    height: 34px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #00bb40;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    font-family: inherit;
+    padding: 11px 3px;
+    font-size: 10px;
+    font-weight: 700;
+
+    :hover {
+      background-color: #43ce72;
+    }
+  }
+
+  &__rank {
+    display: flex;
+    gap: 8px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  .rank-player,
+  .rank-prize {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
